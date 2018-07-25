@@ -1,6 +1,8 @@
 <?php
 
-$food = [1, 2, 4, 3, 3, 2];
+$inputLine = trim(fgets(STDIN));
+
+$food = explode(' ', $inputLine);
 $foodCnt = array_fill(0, 101, 0);
 
 $min = 0;
@@ -10,8 +12,7 @@ foreach($food as $f) {
     $min = max($foodCnt[$f], $min);
 }
 
-echo $min;
-
+fwrite(STDOUT, $min);
 
 
 
