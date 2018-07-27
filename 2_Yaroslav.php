@@ -9,10 +9,20 @@ if (!isset($obj['cells']) || !isset($obj['distance'])) {
 
 $cells = $obj['cells'];
 $distance = $obj['distance'];
+
 $result = 0;
 
+for ($i = 1; $i < count($cells); $i++) {
+    $l = $cells[$i - 1] + $distance;
+    $r = $cells[$i] - $distance;
+    if ($l == $r)
+        $result++;
+    else if ($r > $l)
+        $result += 2;
 
-$r["result"] = $result;
+}
+
+$r = array("result" => $result);
 $resultString = json_encode($r);
 file_put_contents('php://output', $resultString);
 // echo '{"result": ' . $result . '}';
