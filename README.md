@@ -1,2 +1,2 @@
 # xsolla-school
-Тестовые задачи backend
+Тестовые задачи потоков frontend и backend
