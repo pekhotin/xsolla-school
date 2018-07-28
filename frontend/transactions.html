@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Транзакции</title>
+    <script src="jquery.min.js"></script>
 </head>
 <body>
+<script>
 
+    $.getJSON( "data.json", function( data ) {
+        console.log( "JSON Data read" );
+        for (i = 0; i < data.length; i++) {
+            document.write(data[i].transaction.project.name + "<br>");
+        }
+    });
+
+</script>
 </body>
 </html>
